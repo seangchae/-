@@ -1,0 +1,63 @@
+#include<cstdio>
+#include<cstring>
+#include<iostream>
+using namespace std;
+//char str[100];
+//int f(int st, int en)
+//{
+	/*if(st > en) return 0; //회문인지 확인하는 코드 
+	else if(str[st] == str[en])
+		return f(st + 1, en - 1); 
+	else return 1;
+	if return == 0 //return이 0이면회문 
+		printf("회문");
+	else //아니면 회문이 아님 
+		printf("회문이 아님");
+	*/
+//}
+int main()
+{
+	/*char str[100];
+	scanf("%[^\n]", str); //^은 입력에서 제외할 문자를 설정하는것으로 뒤에 \n을 붙여 엔터를 제외하고 입력받는다. 원래는 공백(스페이스바)를 기준으로 버퍼에 들어가 잘리지만 엔터를 기준으로 버퍼에 들어가기 때문에 공백을 넣어도 안잘림. 
+	printf("%s", str);
+	*/
+	
+/*char str[1001]; //회문 확인용(while) 
+int check = 0;
+int st = 0, en = strlen(str) - 1;
+while(1)
+{
+	if(st >= en)
+	{
+		break;
+	}
+	if(str[st] != str[en])
+	{
+		check = 1;
+		break;
+	}
+	st++;
+	en--;
+}
+*/
+
+/*char str[1001];  //회문 확인용(재귀) 
+int f(int st, int en) //st:왼쪽에서 오는 index, en : 오른쪽에서 오는 index 
+{
+	if(st > en) return 0; //st와 en이 뒤집히면 끝까지 잘 진행된것이므로 회문 
+	else if(str[st] == str[en]) //중간단계에서 st번째와 en번째가 같은지 확인 
+		return f(st + 1, en - 1); //st는 오른쪽에서 한 칸, en은 왼쪽에서 한칸 이동하여 확인 
+	else return 1;
+}
+*/
+	string str;
+	reverse(str.begin(), str.end());
+	str = int a;
+	reverse(str.begin(), str.end());
+	if(a == str)
+		printf("%d", yes);
+	else
+		printf("%d", no)
+
+	return 0;
+}
