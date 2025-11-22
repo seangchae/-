@@ -1,0 +1,30 @@
+#include<cstdio>
+#include<cstring>
+#include<iostream>
+#include<stack>
+#include<queue>
+using namespace std;
+int main()
+{
+	int num = 0;
+	scanf("%d", &num);
+	stack <int> total;
+	for(int i = 0; i < num; i++)
+	{
+		int sum = 0;
+		scanf("%d", &sum);
+		if(sum != 0)
+			total.push(sum);
+		else
+			total.pop();
+	}
+	int sum = 0;
+	while(!total.empty())
+		{
+			sum += total.top();
+			total.pop();
+		}
+	printf("%d", sum);
+
+	return 0;
+}
