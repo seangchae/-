@@ -1,16 +1,27 @@
 #include<cstdio>
 #include<cstring>
 #include<iostream>
+
 using namespace std;
+
 int main()
 {
 	char str[1000000];
+	char num[26];
+	int most = 0;
 	scanf("%s", str);
-	int len = strlen(len);
+	int len = strlen(str);
 	for(int i = 0; i < len; i++)
 	{
-		
+		if(str[i] > 'a' - 1 && str[i] < 'A')
+			str[i] += 32;
+		num[str[i]] += 1;
 	}
-	
+	for(int i = 0; i < 26; i++)
+	{
+		if(num[i] > num[i + 1])
+			most = num[i];		
+	}
+	printf("%d", most);
 	return 0;
 }
