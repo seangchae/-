@@ -1,0 +1,57 @@
+# GC 함량 계산 함수
+def calculate_gc_content(seq):
+    """
+    DNA 염기서열의 GC 함량을 계산합니다.
+    """
+    seq = seq.upper() # 대소문자 구분을 없앱니다
+    no_of_g = seq.count('G')
+    no_of_c = seq.count('C')
+    total_bases = len(seq)
+
+    if total_bases == 0:
+        return 0
+
+    gc_content = (no_of_g + no_of_c) / total_bases * 100
+    return gc_content
+
+# AT 함량 계산 함수
+def calculate_at_content(seq):
+    """
+    DNA 염기서열의 AT 함량을 계산합니다.
+    """
+    seq = seq.upper() # 대소문자 구분을 없앱니다
+    no_of_a = seq.count('A')
+    no_of_t = seq.count('T')
+    total_bases = len(seq)
+
+    if total_bases == 0:
+        return 0
+
+    at_content = (no_of_a + no_of_t) / total_bases * 100
+    return at_content
+
+# 특정한 염기서열 반복 횟수 찾기
+def calculate_spe_content(seq):
+    """
+    DNA 염기서열의 입력된 염기서열의 반복 횟수를 계산합니다.
+    """
+    seq = seq.upper() # 대소문자 구분을 없앱니다
+    spe2 = seq.count(spe1)
+
+    return spe2
+
+# --- 여기서부터 새로운 임의의 DNA 서열 설정 및 실행 ---
+
+new_dna_sequence = input("분석하고 싶은 유전자의 염기서열을 입력해 주세요.:")
+spe1 = input('반복 횟수를 찾고 싶은 염기서열을 입력해 주세요.:')
+spe1= spe1.upper()
+# 함수 실행 및 결과 저장
+gc_percent_result = calculate_gc_content(new_dna_sequence)
+at_percent_result = calculate_at_content(new_dna_sequence)
+spe2 = calculate_spe_content(new_dna_sequence)
+# 결과 출력
+print(f"설정된 DNA 염기서열: {new_dna_sequence}")
+print(f"GC 함량: {gc_percent_result:.2f}%")
+print(f"AT 함량: {at_percent_result:.2f}%")
+print(f"입력한 염기서열의 개수:{len(new_dna_sequence)}")
+print(f"반복되는 염기서열의 개수: {spe2}")
