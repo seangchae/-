@@ -6,14 +6,14 @@
 using namespace std;
 int main()
 {
-	int sum, num = 0;
+	int num = 0;
 	scanf("%d", &num);
 	queue <int> card;
-	for(num; num < 0; num--)
+	for(num; num > 0; num--)
 	{
 		card.push(num);
 	}
-	while(!card.empty())
+	while(!card.size() == 1)
 	{
 		int a = 0;
 		card.pop();
@@ -22,6 +22,7 @@ int main()
 			break;
 		else
 			card.pop();
+			card.front() = a;
 			card.push(a);
 	}
 	printf("%d", card.front());
